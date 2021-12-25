@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<button id="america-calc">Америка</button>
+<button id="canada-calc">Канада</button>
+<hr>
+<form id="calc-out">
+    <fieldset>
+        <legend>Доставка</legend>
+        <p>
+            <select id="places">
+                <option>Выберите аукцион</option>
+            </select>
+        </p>
+        <p>
+            <select id="ports" class="select">
+                <option>Выберите порт отправки</option>
+            </select>
+        </p>
+        <p>
+            <select id="car-type">
+                <option>Выберите тип кузова</option>
+                <option value="Седан">Седан</option>
+                <option value="Кроссовер">Кроссовер</option>
+                <option value="Пикап">Пикап</option>
+            </select>
+        </p>
+        <p>Стоимость доставки: <span id="delivery-price">0</span>$</p>
+    </fieldset>
+
+    <fieldset>
+        <legend>Стоимость авто</legend>
+        <p>
+            <input type="number" class="form-control" placeholder="Цена авто на аукционе" id="calc-cost" min="0">
+            <label for="calc-cost" class="form-label">Стоимость на аукционе</label>
+        </p>
+        <p>
+            <select name="" class="form-control" id="calc-auction">
+                <option value="copart">Copart</option>
+                <option value="iaai">IAAI</option>
+            </select>
+            <label for="calc-auction" class="form-label">Аукцион</label>
+        </p>
+        <p>
+            <select name="" class="form-control" id="calc-category">
+                <option value="a">Категория А</option>
+                <option value="c">Категория С</option>
+            </select>
+            <label for="calc-category" class="form-label">Категория</label>
+        </p>
+        <p>Комиссия аукциона: <span id="calc-commission">0</span>$</p>
+        <p>Стоимость авто с комиссией: <span id="calc-self_cost">0</span>$</p>
+    </fieldset>
+
+    <fieldset>
+        <legend>Растаможка</legend>
+
+        <p>
+            <select name="" class="form-control" id="calc-engine_type">
+                <option value="petrol">Бензин</option>
+                <option value="diesel">Дизель</option>
+                <option value="electric">Электро</option>
+                <option value="hybrid">Гибрид</option>
+            </select>
+            <label for="calc-engine_type" class="form-label">Тип двигателя</label>
+        </p>
+        <p>
+            <input type="number" class="form-control" id="calc-engine_volume" placeholder="Объём">
+            <label for="calc-engine_volume" class="form-label">Объём (см3) или (кВт⋅ч)</label>
+        </p>
+        <p>
+            <select name="" class="form-control" id="calc-car_age">
+
+            </select>
+            <label for="calc-car_age" class="form-label">Возраст авто</label>
+        </p>
+        <p class="text-center fs-5 mt-3">Налог на импорт: <span id="calc-tax-import">0</span>$</p>
+        <p class="text-center fs-5 mt-3">Акциз: <span id="calc-tax-ac">0</span>$</p>
+        <p class="text-center fs-5 mt-3">НДС: <span id="calc-tax-nds">0</span>$</p>
+        <p class="text-center fs-5 mt-3">Всего: <span id="calc-tax">0</span>$</p>
+    </fieldset>
+    <fieldset>
+        <legend>Доп. услуги</legend>
+        <p>
+            <input type="text" placeholder="Страховка %" id="calc-insurance">
+            <label for="calc-insurance" class="form-label">Страховка в % от стоимости машины</label>
+        </p>
+        <p>
+            <input type="text" placeholder="Услуги в порту" id="calc-dop-port">
+            <label for="calc-dop-port" class="form-label">Комплекс услуг в порту</label>
+        </p>
+        <p>
+            <input type="text" placeholder="Доступ к аккаунту" id="calc-dop-account">
+            <label for="calc-dop-account" class="form-label">Доступ к аккаунту</label>
+        </p>
+        <p>Стоимость страховки: <span id="dop-insurance">0</span>$</p>
+        <p>Суммарная стоимость доп услуг: <span id="dop-tax">0</span>$</p>
+    </fieldset>
+    <h2 class="">Итоговая стоимость: <span id="result_cost">0</span>$</h2>
+    <hr>
+</form>
+<form id="ca-calc-out" style="display: none">
+    <fieldset>
+        <legend>Доставка</legend>
+        <p>
+            <select id="ca-places">
+                <option>Выберите аукцион</option>
+            </select>
+        </p>
+        <p>
+            <select id="ca-ports">
+                <option>Port of Montreal</option>
+            </select>
+        </p>
+        <p>
+            <select id="ca-car-type">
+                <option>Выберите тип кузова</option>
+                <option value="Седан">Седан</option>
+                <option value="Кроссовер">Кроссовер</option>
+                <option value="Пикап">Пикап</option>
+            </select>
+        </p>
+        <p>Стоимость доставки: <span id="ca-delivery-price">0</span>$</p>
+    </fieldset>
+
+    <fieldset>
+        <legend>Стоимость авто</legend>
+        <p>
+            <input type="number" class="form-control" placeholder="Цена авто на аукционе" id="ca-calc-cost" min="0">
+            <label for="ca-calc-cost" class="form-label">Стоимость на аукционе</label>
+        </p>
+        <p>
+            <select name="" class="form-control" id="ca-calc-auction">
+                <option value="copart">Copart</option>
+                <option value="iaai">IAAI</option>
+            </select>
+            <label for="ca-calc-auction" class="form-label">Аукцион</label>
+        </p>
+        <p>
+            <select name="" class="form-control" id="ca-calc-category">
+                <option value="a">Категория А</option>
+                <option value="c">Категория С</option>
+            </select>
+            <label for="calc-category" class="form-label">Категория</label>
+        </p>
+        <p>Комиссия аукциона: <span id="ca-calc-commission">0</span>$</p>
+        <p>Стоимость авто с комиссией: <span id="ca-calc-self_cost">0</span>$</p>
+    </fieldset>
+    <fieldset>
+        <legend>Растаможка</legend>
+        <p>
+            <select name="" class="form-control" id="ca-calc-engine_type">
+                <option value="petrol">Бензин</option>
+                <option value="diesel">Дизель</option>
+                <option value="electric">Электро</option>
+                <option value="hybrid">Гибрид</option>
+            </select>
+            <label for="calc-engine_type" class="form-label">Тип двигателя</label>
+        </p>
+        <p>
+            <input type="number" class="form-control" id="ca-calc-engine_volume" placeholder="Объём">
+            <label for="calc-engine_volume" class="form-label">Объём (см3) или (кВт⋅ч)</label>
+        </p>
+        <p>
+            <select name="" class="form-control" id="ca-calc-car_age">
+
+            </select>
+            <label for="calc-car_age" class="form-label">Возраст авто</label>
+        </p>
+        <p class="text-center fs-5 mt-3">Налог на импорт: <span id="ca-calc-tax-import">0</span>$</p>
+        <p class="text-center fs-5 mt-3">Акциз: <span id="ca-calc-tax-ac">0</span>$</p>
+        <p class="text-center fs-5 mt-3">НДС: <span id="ca-calc-tax-nds">0</span>$</p>
+        <p class="text-center fs-5 mt-3">Всего: <span id="ca-calc-tax">0</span>$</p>
+    </fieldset>
+    <fieldset>
+        <legend>Доп. услуги</legend>
+        <p>
+            <input type="text" placeholder="Страховка % от стоимости машины" id="ca-calc-insurance">
+            <label for="ca-calc-insurance" class="form-label">Тип двигателя</label>
+        </p>
+        <p>
+            <input type="text" placeholder="Комплекс услуг в порту" id="ca-calc-dop-port">
+            <label for="ca-calc-dop-port" class="form-label">Тип двигателя</label>
+        </p>
+        <p>
+            <input type="text" placeholder="Доступ к аккаунту" id="ca-calc-dop-account">
+            <label for="ca-calc-dop-account" class="form-label">Тип двигателя</label>
+        </p>
+        <p>Стоимость страховки: <span id="ca-dop-insurance">0</span>$</p>
+        <p>Суммарная стоимость доп услуг: <span id="ca-dop-tax">0</span>$</p>
+    </fieldset>
+
+    <h2 class="">Итоговая стоимость: <span id="ca-result_cost">0</span>$</h2>
+    <hr>
+</form>
+<!--<p class="text-center fs-5 mt-3">Отправка из: <span id="calc-delivery_loc">-</span></p>-->
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+<script src="js/script.js">
+
+</script>
+
+</body>
+</html>
+
