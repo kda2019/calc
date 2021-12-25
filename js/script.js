@@ -30,7 +30,7 @@ $.getJSON(url, function (r) {
 
     let $places = $('#places')
     $places.html(tags)
-    $places.chosen()
+    $places.select2()
     $places.on('change', (e) => {
         $('#delivery-price').html('0')
         let tags = ['<option>Выберите порт отправки</option>']
