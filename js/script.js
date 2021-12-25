@@ -30,7 +30,9 @@ $.getJSON(url, function (r) {
 
     let $places = $('#places')
     $places.html(tags)
-    $places.select2()
+    $places.select2({
+        searchInputPlaceholder: "Поиск"
+    })
     $places.on('change', (e) => {
         $('#delivery-price').html('0')
         let tags = ['<option>Выберите порт отправки</option>']
@@ -563,6 +565,11 @@ let ca_data = {
     ]
 }
 let $ca_places = $('#ca-places')
+$ca_places.select2({
+    searchInputPlaceholder: "Поиск"
+})
+
+
 let $ca_car_type = $('#ca-car-type')
 let ca_places_inner = ['<option>Выберите аукцион</option>']
 
