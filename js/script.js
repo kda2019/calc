@@ -1,7 +1,7 @@
 let EXTRA_CHARGE = 80
 let EXTRA_CHARGE_CA = 120
 let EUR_USD = 1.13
-let CURRENT_YEAR = 2021
+let CURRENT_YEAR = 2022
 
 let url = 'https://sheets.googleapis.com/v4/spreadsheets/1TvtiRxP_dZYqb1I4xY4hik0hVw0YPmi7ibBxVo1y8oE/values/A1:K500?key=AIzaSyDKc47tmc8VRnfP_Trfl0fRwpZuJEB0C2c'
 
