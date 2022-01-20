@@ -67,7 +67,7 @@ $.getJSON(url, function (r) {
             } else if (port === 'Houston') {
                 ocean_shipping += 650 + 50
             } else if (port === 'Los Angeles') {
-                ocean_shipping += 950 + 175
+                ocean_shipping += 1050 + 150
             } else if (port === 'Baltimore') {
                 ocean_shipping += 700
             }
