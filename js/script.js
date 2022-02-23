@@ -61,9 +61,9 @@ $.getJSON(url, function (r) {
             let port = $('#ports option:selected').attr('data-port')
             let ocean_shipping = 0
             if (port === 'New Jersey') {
-                ocean_shipping += 600 + 25
+                ocean_shipping += 650 + 25
             } else if (port === 'Savannah') {
-                ocean_shipping += 575 + 50
+                ocean_shipping += 650 + 25
             } else if (port === 'Houston') {
                 ocean_shipping += 750 + 25
             } else if (port === 'Los Angeles') {
